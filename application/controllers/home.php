@@ -9,7 +9,9 @@
 
     function index(){
       $data['content'] = $this->m_home->get_content()->result();
+      $this->load->view('header');
       $this->load->view('halaman_utama', $data);
+      $this->load->view('footer');
     }
 
   }
