@@ -14,5 +14,15 @@
       $this->load->view('footer');
     }
 
+    function hapus_topik(){
+      $id_topik = $this->uri->segment(3);
+
+      if(!empty($id_topik)){
+        $this->db->where('id_topik', $id_topik);
+        $this->db->delete('tbl_topik');
+        redirect('home');
+      }
+    }
+
   }
 ?>

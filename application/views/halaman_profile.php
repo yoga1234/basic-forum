@@ -26,7 +26,7 @@
           <tr>
             <th>Judul</th>
             <th>Pengunggah</th>
-            <th style="width: 160px">Aksi</th>
+            <th style="width: 240px">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -37,15 +37,21 @@
                   <td><?php echo $i->judul_topik ?></td>
                   <td><?php echo $i->pengunggah ?></td>
                   <td>
-                    <a href="<?php echo site_url('topik/ambil_topik/').$i->id_topik;?>">
+                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik;?>">
                       <button class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                        Lihat
+                      </button>
+                    </a>
+                    <a href="<?php echo site_url('topik/ambil_topik/').$i->id_topik;?>">
+                      <button class="btn btn-info">
                         <i class="fa fa-pencil-alt"></i>
                         Edit
                       </button>
                     </a>
                     <?php
                       if($this->session->userdata("nama") == $i->pengunggah){
-                        echo "<a href=".site_url('topik/lihat_topik/').$i->id_topik.">";
+                        echo "<a href=".site_url('profile/hapus_topik/').$i->id_topik.">";
                         echo "<button class='btn btn-danger'>";
                         echo "<i class='fa fa-trash'></i>";
                         echo "Hapus";

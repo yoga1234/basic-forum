@@ -55,7 +55,7 @@
                     </a>
                     <?php
                       if($this->session->userdata("nama") == $i->pengunggah){
-                        echo "<a href=".site_url('topik/lihat_topik/').$i->id_topik.">";
+                        echo "<a href=".site_url('home/hapus_topik/').$i->id_topik.">";
                         echo "<button class='btn btn-danger'>";
                         echo "<i class='fa fa-trash'></i>";
                         echo "Hapus";
