@@ -5,6 +5,7 @@
         <i class="fas fa-chevron-left"></i>
         Kembali
       </a>
+      <hr>
       <?php
         foreach ($data_topik as $i) {
           ?>
