@@ -53,12 +53,16 @@
                         Lihat
                       </button>
                     </a>
-                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik;?>">
-                      <button class="btn btn-primary">
-                        <i class="fa fa-search"></i>
-                        Lihat
-                      </button>
-                    </a>
+                    <?php
+                      if($this->session->userdata("nama") == $i->pengunggah){
+                        echo "<a href=".site_url('topik/lihat_topik/').$i->id_topik.">";
+                        echo "<button class='btn btn-danger'>";
+                        echo "<i class='fa fa-trash'></i>";
+                        echo "Hapus";
+                        echo "</button>";
+                        echo "</a>";
+                      }
+                    ?>
                   </td>
                 </tr>
                 <?php
