@@ -18,7 +18,9 @@
     }
 
     function index(){
+      $this->load->view('header');
       $this->load->view('tambah_topik');
+      $this->load->view('footer');
     }
   }
 ?>

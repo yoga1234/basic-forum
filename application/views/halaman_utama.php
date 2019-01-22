@@ -36,7 +36,7 @@
             <tr>
               <th>Judul</th>
               <th>Pengunggah</th>
-              <th></th>
+              <th style="width: 160px">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +46,20 @@
                 <tr>
                   <td><?php echo $i->judul_topik?></td>
                   <td><?php echo $i->pengunggah?></td>
-                  <td><button class="btn btn-primary mx-auto d-block"><i class="fa fa-search"></i> Lihat</button></td>
+                  <td>
+                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik;?>">
+                      <button class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                        Lihat
+                      </button>
+                    </a>
+                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik;?>">
+                      <button class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                        Lihat
+                      </button>
+                    </a>
+                  </td>
                 </tr>
                 <?php
               }
@@ -55,14 +68,3 @@
         </div>
       </div>
     </section>
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $('#example').DataTable({
-      "columns": [
-        { "width": "25%" },
-        null,
-        null
-      ]
-    });
-  } );
-  </script>
