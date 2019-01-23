@@ -37,7 +37,7 @@
                   <td><?php echo $i->judul_topik ?></td>
                   <td><?php echo $i->pengunggah ?></td>
                   <td>
-                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik;?>">
+                    <a href="<?php echo site_url('topik/lihat_topik/').$i->id_topik.'/'.'profile';?>">
                       <button class="btn btn-primary">
                         <i class="fa fa-search"></i>
                         Lihat
