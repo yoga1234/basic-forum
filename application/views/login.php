@@ -16,8 +16,8 @@
           Login Pengguna
         </div>
         <form class="" action="<?php echo site_url('login/aksi_login') ?>" method="post">
-          <input type="text" name="username" placeholder="Masukan Username Anda" autocomplete="off">
-          <input type="password" name="password" placeholder="Masukan Password Anda" autocomplete="off">
+          <input type="text" name="username" placeholder="Masukan Username Anda" autocomplete="off" required>
+          <input type="password" name="password" placeholder="Masukan Password Anda" autocomplete="off" required>
           <button type="submit" name="button">Masuk</button>
         </form>
         <div class="informasi-login">

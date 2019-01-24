@@ -43,7 +43,7 @@
                         Lihat
                       </button>
                     </a>
-                    <a href="<?php echo site_url('topik/ambil_topik/').$i->id_topik;?>">
+                    <a href="<?php echo site_url('topik/ambil_topik/').$i->id_topik.'/'.'profile'?>">
                       <button class="btn btn-info">
                         <i class="fa fa-pencil-alt"></i>
                         Edit
@@ -60,6 +60,12 @@
                       }
                     ?>
                   </td>
+                  <a href="#">
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-trash"></i>
+                      Hapus
+                    </button>
+                  </a>
                 </tr>
               <?php
             }
@@ -69,3 +75,28 @@
     </div>
   </div>
 </div>
+<!-- Modal dimulai -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Modal Selesai -->

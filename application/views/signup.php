@@ -15,8 +15,8 @@
           Daftar Pengguna
         </div>
         <form class="" action="<?php echo site_url('signup/signup_action') ?>" method="post">
-          <input type="text" name="username" placeholder="Masukan Username Anda" autocomplete="off">
-          <input type="password" name="password" placeholder="Masukan Password Anda" autocomplete="off">
+          <input type="text" name="username" placeholder="Masukan Username Anda" autocomplete="off" required>
+          <input type="password" name="password" placeholder="Masukan Password Anda" autocomplete="off" required>
           <button type="submit" name="button">Daftar</button>
         </form>
         <a href="<?php echo site_url('login'); ?>" class="back-button" type="button" name="button">kembali</a>

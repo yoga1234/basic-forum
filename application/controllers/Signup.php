@@ -7,7 +7,7 @@
     }
 
     public function signup_action(){
-      $username = $this->input->post('username');
+      $username = strtolower(str_replace(' ', '', $this->input->post('username')));
       $password = $this->input->post('password');
       $table = "tbl_user";
       $data_user = array(
@@ -27,11 +27,12 @@
         $this->load->view('signup');
       } else {
         $this->db->insert($table, $data_user);
-        echo '
-          <script>
-            alert("Anda berhasil daftar");
-          </script>
-        ';
+        echo '<script>';
+        echo 'alert("Anda berhasil daftar sebagai ';
+        echo $username;
+        echo '");';
+        echo '</script>';
+
         $this->load->view('login');
       }
     }

@@ -1,13 +1,11 @@
 <div class="container bg-light" style="margin-top: 40px">
   <div class="row">
     <div class="col-md-12">
-      <h3 style="margin-top: 40px">Masukan Topik Baru</h3>
+      <h3 style="margin-top: 40px">Edit Topik</h3>
       <?php
       foreach ($data_topik as $i) {
         ?>
-      <form class="" action="<?php echo site_url('topik/edit_topik/').$i['id_topik']; ?>" method="post" style="margin-top: 40px" role="form">
-
-
+        <form class="" action="<?php echo site_url('topik/edit_topik/').$i['id_topik']; ?>" method="post" style="margin-top: 40px" role="form">
           <div class="form-group">
             <label for="judulTopik">Judul</label>
             <input type="text" class="form-control" name="judul_topik" autocomplete="off" value="<?php echo $i['judul_topik']; ?>">
