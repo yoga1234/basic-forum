@@ -16,11 +16,15 @@
 
     function hapus_topik(){
       $id_topik = $this->uri->segment(3);
-
+      $var_halaman = $this->uri->segment(4);
       if(!empty($id_topik)){
         $this->db->where('id_topik', $id_topik);
         $this->db->delete('tbl_topik');
-        redirect('home');
+        if($var_halaman == 'home'){
+          redirect('home');
+        } else {
+          redirect('profile');
+        }
       }
     }
 

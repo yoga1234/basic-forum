@@ -55,20 +55,19 @@
                     </a>
                     <?php
                       if($this->session->userdata("nama") == $i->pengunggah or $this->session->userdata("nama") == "admin"){
+                        $idTopik = $i->id_topik;
                         echo "<a href=".site_url('topik/ambil_topik/').$i->id_topik."/".'home'.">";
                         echo "<button class='btn btn-info'>";
                         echo "<i class='fa fa-pencil-alt'></i>";
                         echo " Edit";
                         echo "</button>";
                         echo "</a> ";
+                        echo "<button class='btn btn-danger' data-toggle='modal' data-target='#myModal' data-whatever='".site_url('home/hapus_topik/').$i->id_topik."/home'>";
+                        echo "<i class='fa fa-trash'></i>";
+                        echo " Hapus";
+                        echo "</button>";
                       }
                     ?>
-                    <a href="#">
-                      <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-trash"></i>
-                        Hapus
-                      </button>
-                    </a>
                   </td>
                 </tr>
                 <?php
@@ -78,32 +77,4 @@
         </div>
       </div>
     </section>
-    <!-- Modal dimulai -->
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Konfirmasi</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            Hapus data?
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <a href="<?php echo site_url('home/hapus_topik/').$i->id_topik ?>">
-              <button type="button" class="btn btn-danger">Hapus</button>
-            </a>
-
-            <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- Modal Selesai-->
+    

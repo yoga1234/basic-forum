@@ -61,9 +61,6 @@
         echo "data gagal di update";
       }
 
-
-
-
     }
 
       function tambah_komentar(){
