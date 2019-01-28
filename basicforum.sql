@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2019 at 01:57 PM
+-- Generation Time: Jan 28, 2019 at 10:57 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_komentar`
+--
+
+CREATE TABLE `tbl_komentar` (
+  `id_komentar` int(11) NOT NULL,
+  `id_topik` varchar(255) NOT NULL,
+  `isi_komentar` varchar(255) NOT NULL,
+  `pengomentar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_komentar`
+--
+
+INSERT INTO `tbl_komentar` (`id_komentar`, `id_topik`, `isi_komentar`, `pengomentar`) VALUES
+(1, '8', 'Ini adalah sebuah komentar\r\n', 'jone'),
+(2, '10', 'Percobaan sebuah komentar', 'jone'),
+(3, '1', 'Pengetesan kometar', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_topik`
 --
 
@@ -35,6 +57,13 @@ CREATE TABLE `tbl_topik` (
   `pengunggah` varchar(30) NOT NULL,
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_topik`
+--
+
+INSERT INTO `tbl_topik` (`id_topik`, `judul_topik`, `konten_topik`, `pengunggah`, `url`) VALUES
+(1, '12', '12', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -53,11 +82,18 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`) VALUES
-(1, 'admin', 'yogasmara');
+(1, 'admin', 'admin'),
+(15, 'jone', 'jone');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_komentar`
+--
+ALTER TABLE `tbl_komentar`
+  ADD PRIMARY KEY (`id_komentar`);
 
 --
 -- Indexes for table `tbl_topik`
@@ -76,16 +112,22 @@ ALTER TABLE `tbl_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_komentar`
+--
+ALTER TABLE `tbl_komentar`
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_topik`
 --
 ALTER TABLE `tbl_topik`
-  MODIFY `id_topik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_topik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
