@@ -1,13 +1,31 @@
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <h1>Profile <?php echo $this->session->userdata("nama"); ?></h1>
       </div>
-      <div class="col-md-8">
-        <a href="<?php echo site_url('login/logout'); ?>" class="btn btn-outline-danger float-right" style="margin-top: 10px">
-          <i class="fas fa-sign-out-alt"></i>
-          Logout
+      <div>
+        <?php
+          if($this->session->userdata("nama") == "admin"){
+            echo "<a href='".site_url('profile/daftar_user').">";
+            echo "<button type='button' name='button' class='btn btn-outline-info' style='margin-top: 10px'>";
+            echo "<i class='fas fa-list-ul'></i>";
+            echo "Daftar User";
+            echo "</button>";
+            echo "</a>";
+          }
+        ?>
+        <a href="<?php echo site_url('user'); ?>">
+          <button type="button" name="button" class="btn btn-outline-info" style="margin-top: 10px">
+            <i class="fas fa-key"></i>
+            Ganti password
+          </button>
+        </a>
+        <a href="<?php echo site_url('login/logout'); ?>">
+          <button type="button" name="button" class="btn btn-outline-danger" style="margin-top: 10px">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
         </a>
       </div>
     </div>

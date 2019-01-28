@@ -4,6 +4,7 @@
     function __construct(){
       parent:: __construct();
       $this->load->model('m_profile');
+      $this->load->model('m_user');
     }
 
     function index(){
@@ -36,6 +37,13 @@
         $this->db->delete('tbl_topik');
         redirect('profile');
       }
+    }
+
+    function daftar_user(){
+      $data['user'] = $this->m_user->lihat_user()->result();
+      $this->load->view('header');
+      $this->load->view('daftar_user', $data);
+      $this->load->view('footer');
     }
 
   }
